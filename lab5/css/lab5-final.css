@@ -1,0 +1,121 @@
+body {
+  background: url(../images/bg0.jpg) no-repeat fixed;  /* 기본 배경 이미지 지정 */
+  background-size: cover;
+}
+#container {
+  display:none;
+}
+
+.ad {
+  position:absolute;
+  right: 35px;
+  bottom: 95px;  
+  width: 70px;
+  height: 120px;
+      overflow:hidden;
+}
+
+.ad img {
+  width: 70px;
+  height: 120px;
+  object-fit:cover;
+}
+
+.start_point{
+  width: 30px;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  left: 25px;
+  bottom: 290px;
+}
+
+.box {
+  position:absolute;
+  left: 25px;
+  bottom: 90px;
+  --d:0.8s; /*duration factor*/   
+  width: 525px;
+  height: 190px;
+  padding-top:50px;
+  display: flex;
+  align-items: flex-end;
+  overflow:hidden;
+}
+
+.effect {
+  width:30px;
+  animation-timing-function:cubic-bezier(.17,.76,.58,1);
+  animation-iteration-count:2; 
+  animation-direction: alternate; 
+  animation-name:t1,t2,t3,t4,t5; 
+  animation-duration:
+      var(--d), 
+      calc(var(--d)/2),
+      calc(var(--d)/3),
+      calc(var(--d)/4),
+      calc(var(--d)/5);
+  animation-delay: 
+      calc(var(--d)*-1), 
+      calc(var(--d)), 
+      calc(var(--d)   + 2*var(--d)/2), 
+      calc(var(--d)*2 + 2*var(--d)/3), 
+      calc(var(--d)*2 + 2*var(--d)/3 + 2*var(--d)/4); 
+}
+@keyframes t1{to {transform:translateY(-160px)}} 
+@keyframes t2{to {transform:translateY(-110px)}}
+@keyframes t3{to {transform:translateY(-60px)}}
+@keyframes t4{to {transform:translateY(-30px)}}
+@keyframes t5{to {transform:translateY(-10px)}}
+
+.box > span {
+  animation:m calc(var(--d)*2 + 2*var(--d)/3 + 2*var(--d)/4 + 2*var(--d)/5) linear forwards;
+}
+
+@keyframes m{to {transform:translateX(470px)}}
+
+.end_point{
+  width: 30px;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  left: 495px;
+  bottom: 90px;
+}
+
+
+@media screen and (max-width:1024px) {
+  body {
+    background: url(../images/bg1.jpg) no-repeat fixed;  /* 가로가 1024px 이하면 bg1.jpg 지정 */
+    background-size: cover;
+  }
+}
+@media screen and (max-width:900px) {
+  body {
+    background: white; /* 가로가 768px 이하면 bg2.jpg 지정 */ 
+    background-size:cover;
+  }
+  #container {
+  display:block;
+  }
+}
+@media screen and (max-width:768px) {
+  body {
+    background: url(../images/bg2.jpg) no-repeat fixed;  /* 가로가 768px 이하면 bg2.jpg 지정 */
+    background-size:cover;
+  }
+  #container{
+    display:none;
+  }
+}
+@media screen and (max-width:320px) {
+  body {
+    background: url(../images/bg3.jpg) no-repeat fixed;  /* 가로가 320px 이하면 bg3.jpg 지정 */
+    background-size: cover; 
+  }
+}
+
+
+
+
+
