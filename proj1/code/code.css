@@ -1,0 +1,18 @@
+.slider {
+  position: relative;
+}
+.slides {
+  display: flex;
+  overflow-x: hidden;
+}
+.slides img {
+  width: 100%;
+  height: auto;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+.button {
+  margin: 0 10px;
+}
